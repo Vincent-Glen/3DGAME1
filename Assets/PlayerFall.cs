@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerFall : MonoBehaviour
 {
-  [SerializeField] private Transform Player;
-  [SerializeField] private Transform Respawn; 
+  [SerializeField] private Transform player;
+  [SerializeField] private Transform respawn; 
 
-  void OnCollisionEnter(Collider other)
+  void OnTriggerEnter(Collider other)
   {
-    Player.transform.position = Respawn.transform.position;
+    player.transform.position = respawn.transform.position;
   }
 }
