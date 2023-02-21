@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerFall : MonoBehaviour
 {
-  [SerializeField] private Transform player;
-  [SerializeField] private Transform respawn; 
-
-  void OnTriggerEnter(Collider other)
+  public int Respawn;
+  void OnTriggerEnter(Collider collider)
   {
-    player.transform.position = respawn.transform.position;
+    if  (collider.gameObject.CompareTag ("Player"))
+    {
+      SceneManager.LoadScene(Respawn);
+    }
   }
 }
